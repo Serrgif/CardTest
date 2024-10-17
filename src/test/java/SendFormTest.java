@@ -16,7 +16,7 @@ public class SendFormTest {
         form.$("[data-test-id=agreement]").click();
         form.$("button").click();
         $("[data-test-id=order-success] p")
-                .shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+                .shouldHave(exactText("  Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
 }
 

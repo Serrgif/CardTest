@@ -11,8 +11,8 @@ public class SendFormTest {
     void SendFormTestV1() {
         open("http://localhost:9999");
         SelenideElement form = $("form");
-        form.$("[data-test-id=name]").setValue("Сергей Новиков");
-        form.$("[data-test-id=phone]").setValue("+79270000000");
+        form.$("[data-test-id=name] input").setValue("Сергей Новиков");
+        form.$("[data-test-id=phone] input").setValue("+79270000000");
         form.$("[data-test-id=agreement]").click();
         form.$("button").click();
         $("[data-test-id=order-success]")

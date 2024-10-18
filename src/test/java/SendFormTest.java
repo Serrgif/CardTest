@@ -51,7 +51,7 @@ public class SendFormTest {
         form.$("[data-test-id='phone'] input").setValue("+79270000000");
         form.$("[data-test-id='agreement']").click();
         form.$("button").click();
-        $("[data-test-id='name'].input_invalid.input__sub")
+        $("[data-test-id='name'].input_invalid .input__sub")
                 .shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
 
@@ -63,7 +63,7 @@ public class SendFormTest {
         form.$("[data-test-id='phone'] input").setValue("+792700000");
         form.$("[data-test-id='agreement']").click();
         form.$("button").click();
-        $("[data-test-id='phone'].input_invalid.input__sub")
+        $("[data-test-id='phone'].input_invalid .input__sub")
                 .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
     }
 
@@ -75,7 +75,7 @@ public class SendFormTest {
         form.$("[data-test-id='phone'] input").setValue("+792700000");
         form.$("[data-test-id='agreement']").click();
         form.$("button").click();
-        $("[data-test-id='name'].input_invalid.input__sub")
+        $("[data-test-id='name'].input_invalid .input__sub")
                 .shouldHave(exactText("Поле обязательно для заполнения"));
     }
 
@@ -87,7 +87,7 @@ public class SendFormTest {
         form.$("[data-test-id='phone'] input").setValue("");
         form.$("[data-test-id='agreement']").click();
         form.$("button").click();
-        $("[data-test-id='phone'].input_invalid.input__sub")
+        $("[data-test-id='phone'].input_invalid .input__sub")
                 .shouldHave(exactText("Поле обязательно для заполнения"));
     }
 

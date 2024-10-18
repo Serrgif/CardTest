@@ -90,7 +90,17 @@ public class SendFormTest {
         $("[data-test-id='phone'].input_invalid .input__sub")
                 .shouldHave(exactText("Поле обязательно для заполнения"));
     }
+    @Test
+    void sendFormTestV8() {
+        open("http://localhost:9999");
 
+        SelenideElement form = $("form");
+        form.$("[data-test-id='name'] input").setValue("Сергей Новиков");
+        form.$("[data-test-id='phone'] input").setValue("+79965003434");
+        form.$("button").click();
+        $("[data-test-id='agreement'].input_invalid .checkbox__text")
+                .shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй"));
+    }
 
 }
 
